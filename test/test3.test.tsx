@@ -1,8 +1,12 @@
-import { render, screen } from '@testing-library/react';
-import App from '../src/App';
+import { fireEvent, render, screen } from '@testing-library/react';
+import StyledButton from '../src/components/StyledButton';
 
-test('TEST3', () => {
-  render(<App />);
-  const linkElement = screen.getByText('Vite + React', { selector: 'h1' });
-  expect(linkElement).toBe('learn react');
+test('TEST3: StyledButton', () => {
+  const onClickFn = jest.fn();
+  render(
+    <StyledButton onClick={() => {onClickFn();}}>TEST</StyledButton>,
+  );
+  const linkElement = screen.getByText('TEST');
+  fireEvent.click(linkElement);
+  expect(onClickFn).toHaveBeenCalledTimes(1);
 });

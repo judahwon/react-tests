@@ -3,6 +3,7 @@ import ora from 'ora';
 
 export default class CustomReporter {
   spinner = ora();
+  allPassed = true;
 
   onRunStart() {
     console.log('\n');
@@ -14,6 +15,7 @@ export default class CustomReporter {
     this.spinner.stop();
     if (testCase.status === 'failed') {
       console.log(chalk.white.bgRed.bold(' ' + testCase.title + ' '), chalk.red.bold('✖'));
+      this.allPassed = false;
     } else {
       console.log(chalk.white.bgGreen.bold(' ' + testCase.title + ' '), chalk.green.bold('✔'));
     }
@@ -38,5 +40,12 @@ export default class CustomReporter {
       ' '.repeat(7 - Math.round(results.numFailedTests / 10)) + '|',
       results.numPassedTests
     );
+
+    console.log('');
+    if (this.allPassed) {
+      console.log(chalk.green.bold('All tests passed!'));
+    } else {
+      console.log(chalk.red.bold('Some tests failed!'));
+    }
   }
 }
