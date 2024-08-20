@@ -3,6 +3,7 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "allowJs": true,
-    "types": ["jest", "jest-rtl"]
+    "types": ["jest", "jest-rtl"],
+    "jsx": "react-jsx"
   },
 }

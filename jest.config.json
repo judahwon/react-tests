@@ -13,5 +13,6 @@
   "verbose": false,
   "reporters": [
     ["./test/reporter.js", {}]
-  ]
+  ],
+  "testSequencer": "./test/sequencer.js"
 }
