@@ -1,9 +1,10 @@
 export interface ListProps {
   records: number[];
+  id?: string;
 }
 
 export interface ListItemProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   index?: number;
 }
 
@@ -21,11 +22,11 @@ function ListItem(props: ListItemProps) {
 }
 
 function List(props: ListProps) {
-  const { records } = props;
+  const { records, id } = props;
   const isRecordsEmpty = records.length === 0;
 
   return (
-    <ul className="mt-4 border-2 border-zinc-500 p-2">
+    <ul id={id} className="mt-4 border-2 border-zinc-500 p-2">
       {isRecordsEmpty
         ? <ListItem index={0}>
           기록이 없습니다.

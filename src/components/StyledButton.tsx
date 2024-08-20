@@ -1,5 +1,5 @@
 export interface StyledButtonProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   onClick?: () => void;
   id?: string;
   className?: string;
