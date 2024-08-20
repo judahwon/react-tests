@@ -6,14 +6,16 @@ export interface StyledButtonProps {
 }
 
 function StyledButton(props: StyledButtonProps) {
+  const { className, children } = props;
+
   return (
     <button
       {...props}
       className={
-        [props.className, 'flex justify-center items-center bg-zinc-500 rounded-md w-20 h-8 mb-1 text-white'].join(' ')
+        [className, 'flex justify-center items-center bg-zinc-500 rounded-md w-20 h-8 my-1 text-white'].join(' ')
       }
     >
-      {props.children}
+      {children}
     </button>
   );
 }
