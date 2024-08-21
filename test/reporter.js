@@ -35,7 +35,7 @@ export default class CustomReporter {
     console.log('--------+----------+---------');
     console.log(
       results.numTotalTests,
-      ' '.repeat(6 - Math.round(results.numTotalTests / 10)) + '|',
+      ' '.repeat(7 - Math.round(results.numTotalTests / 10)) + '|',
       results.numFailedTests,
       ' '.repeat(7 - Math.round(results.numFailedTests / 10)) + '|',
       results.numPassedTests
